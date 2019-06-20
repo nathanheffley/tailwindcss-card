@@ -1,31 +1,24 @@
 {
-  "name": "tailwindcss-card",
-  "version": "0.1.0",
+  "name": "@nathanheffley/tailwindcss-card",
+  "version": "1.0.0",
   "description": "Card components for Tailwind CSS",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Nathan Heffley",
+    "email": "nathan@nathanheffley.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nathanheffley/tailwindcss-card.git"
-  },
+  "license": "MIT",
   "keywords": [
     "card",
     "plugin",
     "component",
-    "tailwind",
-    "tailwindcss",
-    "tailwind css",
-    "tailwindcss-plugin"
+    "tailwind"
   ],
-  "author": "Nathan Heffley",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nathanheffley/tailwindcss-card/issues"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nathanheffley/tailwindcss-card.git"
   },
-  "homepage": "https://github.com/nathanheffley/tailwindcss-card#readme",
-  "devDependencies": {
-    "lodash": "^4.17.5"
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

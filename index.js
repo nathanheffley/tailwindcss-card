@@ -1,38 +1,30 @@
-const _ = require('lodash')
-
-function defaultOptions() {
-  return {
-    maxWidth: '30rem',
-    borderRadius: '.25rem',
-    boxShadow: '0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08)',
-    padding: '1rem 1.5rem',
+module.exports = function({ addComponents, e, theme }) {
+  const defaultTheme = {
+    maxWidth: theme('maxWidth.sm', '24rem'),
+    borderRadius: theme('borderRadius.default', '.25rem'),
+    boxShadow: theme('boxShadow.lg', '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'),
+    padding: `${theme('padding.4', '1rem')} ${theme('padding.6', '1.5rem')}`,
   }
-}
 
-module.exports = function (options) {
-  options = _.isFunction(options)
-    ? options(defaultOptions())
-    : _.defaults(options, defaultOptions())
+  const userTheme = theme('card', {})
 
-  return function ({ addComponents, e }) {
-    addComponents([
-      {
-        '.card': {
-          maxWidth: options.maxWidth,
-          borderRadius: options.borderRadius,
-          overflow: 'hidden',
-          boxShadow: options.boxShadow,
-        },
+  const cardTheme = {...defaultTheme, ...userTheme}
 
-        '.card-image': {
-          display: 'block',
-          width: '100%',
-        },
+  addComponents({
+    '.card': {
+      maxWidth: cardTheme.maxWidth,
+      borderRadius: cardTheme.borderRadius,
+      boxShadow: cardTheme.boxShadow,
+      overflow: 'hidden',
+    },
 
-        '.card-content': {
-          padding: options.padding,
-        },
-      }
-    ])
-  }
+    '.card-image': {
+      display: 'block',
+      width: '100%',
+    },
+
+    '.card-content': {
+      padding: cardTheme.padding,
+    },
+  })
 }

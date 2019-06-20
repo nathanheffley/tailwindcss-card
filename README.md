@@ -6,10 +6,10 @@ Simply require the plugin in your project:
 
 ```
 # With NPM
-npm install tailwindcss-card --save-dev
+npm install @nathanheffley/tailwindcss-card --save-dev
 
 # With Yarn
-yarn add tailwindcss-card --dev
+yarn add @nathanheffley/tailwindcss-card --dev
 ```
 
 ## Usage
@@ -17,11 +17,12 @@ yarn add tailwindcss-card --dev
 To get started using the  plugin, you can simply add require it in your Tailwind config file.
 
 ```js
-plugins: [
-  // Other plugins...
-
-  require('tailwindcss-card')(),
-],
+// tailwind.config.js
+module.exports = {
+  plugins: [
+    require('@nathanheffley/tailwindcss-card'),
+  ],
+}
 ```
 
 You will now have access to all the card components with their default settings. These match up with the [stacked example card](https://tailwindcss.com/docs/examples/cards#stacked) in the official Tailwind documentation.
@@ -34,7 +35,7 @@ To maintain as light of a touch as possible, the components added are as follows
 .card-content
 ```
 
-These classes can be used to form the basic structure of a card. As many `card-image` images and `card-content` wrappers as you want, in any order.
+These classes can be used to form the basic structure of a card. You can use as many `card-image` images and `card-content` elements within a `card` as you want, in any order.
 
 ```html
 <div class="card">
@@ -45,17 +46,21 @@ These classes can be used to form the basic structure of a card. As many `card-i
 </div>
 ```
 
-If you wish to customize the cards, you can pass any combination of the following options (shown here with their default values).
+If you wish to customize the cards, you can pass any of the following options (shown here with their default values if you haven't changed any Tailwind theme options).
 
 ```js
-plugins: [
-  // Other plugins...
-
-  require('tailwindcss-card')({
-    maxWidth: '30rem',
-    borderRadius: '.25rem',
-    boxShadow: '0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08)',
-    padding: '1rem 1.5rem',
-  }),
-],
+// tailwind.config.js
+module.exports = {
+  theme: {
+    card: theme => ({
+      maxWidth: '24rem',
+      borderRadius: '.25rem',
+      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      padding: '1rem 1.5rem',
+    })
+  },
+  plugins: [
+    require('@nathanheffley/tailwindcss-card'),
+  ],
+}
 ```
