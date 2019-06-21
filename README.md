@@ -1,4 +1,9 @@
-# Card Component Tailwind Plugin
+# Tailwind Card Plugin
+
+<p>
+  <a href="https://github.com/nathanheffley/tailwindcss-card/packages/12006"><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version 1.0.0"></a>
+  <a href="https://github.com/nathanheffley/tailwindcss-card/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License MIT"></a>
+</p>
 
 ## Installation
 
